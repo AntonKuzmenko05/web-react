@@ -18,6 +18,44 @@
   }
 }
 
+.cards{
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  &--compact{
+    gap: var(--space-3);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    .card__body{ padding: var(--space-3); }
+    .card__excerpt{ display: none; }
+  }
+}
+
+.toggle{
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  &__btn{
+    padding: .375rem .75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-1);
+    background: var(--surface);
+    color: var(--fg);
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible{ background: var(--brand-100); }
+
+    &[aria-pressed="true"]{
+      background: var(--brand);
+      color: #fff;
+    }
+  }
+}
+
 .team{
   &__title{ margin: 0 0 var(--space-4); font-size: var(--fs-h2);}
 
